@@ -32,6 +32,19 @@
     });
   }
 
+  // Keep the Projects dropdown consistent across existing pages.
+  document.querySelectorAll('.dropdown-menu').forEach(menu => {
+    if(menu.querySelector('a[href="junior-design.html"]')) return;
+
+    const juniorLink = document.createElement('a');
+    juniorLink.href = 'junior-design.html';
+    juniorLink.textContent = 'Junior Design';
+
+    const sophomoreLink = menu.querySelector('a[href="sophomore-design.html"]');
+    if(sophomoreLink) menu.insertBefore(juniorLink, sophomoreLink);
+    else menu.appendChild(juniorLink);
+  });
+
   const dropdown = document.querySelector('.dropdown');
   const dropdownButton = dropdown?.querySelector('.nav-button');
 
