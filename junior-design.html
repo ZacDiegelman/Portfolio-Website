@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Zechariah Diegelman Junior Design mechanical engineering portfolio at UNC Charlotte.">
+  <title>Junior Design | Zechariah Diegelman</title>
+  <script>
+    (function(){
+      const saved=localStorage.getItem('zac-portfolio-theme');
+      const theme=(saved==='light'||saved==='dark')?saved:
+        (window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+      document.documentElement.setAttribute('data-theme',theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/site-v4.css">
+</head>
+<body data-page="projects">
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="identity">
+      <h1>Zechariah Diegelman</h1>
+      <p>Mechanical Engineering Senior · Expected December 2027</p>
+      <span class="school">University of North Carolina at Charlotte</span>
+    </div>
+
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">☾ Dark</button>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="nav-item" data-nav="about" href="index.html">About Me</a>
+      <div class="dropdown">
+        <button class="nav-button" data-nav="projects" type="button" aria-haspopup="true" aria-expanded="false">
+          Projects <span class="chev">▼</span>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a href="projects.html">Projects Overview</a>
+          <a href="junior-design.html">Junior Design</a>
+          <a href="sophomore-design.html">Sophomore Design</a>
+          <a href="freshman-design.html">Freshman Design</a>
+          <a href="mechatronics.html">Mechatronics I &amp; II</a>
+          <a href="additive-manufacturing.html">Additive Manufacturing</a>
+        </div>
+      </div>
+      <a class="nav-item" data-nav="resume" href="resume.html">Resume</a>
+      <a class="nav-item" data-nav="contact" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="card narrow">
+  <div class="card-head">
+    <h2>Junior Design</h2>
+    <p>MEGR 3156 · Design Project Lab II</p>
+  </div>
+  <div class="blank-state">
+    <div class="mark">JD</div>
+    <h2>Junior Design portfolio</h2>
+    <p>This section is ready for Junior Design project documentation, presentations, CAD, analysis, testing, and final results.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <strong>Zechariah Diegelman</strong>
+  <div class="footer-links">
+    <a href="index.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="coursework.html">Course Archive</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.linkedin.com/in/zechariahdiegelman" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+  <div>Mechanical engineering student portfolio · Not an official UNC Charlotte website · © <span id="year"></span></div>
+</footer>
+<script src="assets/site-v4.js"></script>
+
+</body>
+</html>
