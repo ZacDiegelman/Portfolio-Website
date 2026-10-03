@@ -91,10 +91,10 @@ html[data-theme="dark"] .nav-button.active{color:#101722}
 .dropdown.open .dropdown-menu{display:block}
 .dropdown-menu a{
   display:block;padding:11px 13px;color:var(--text);font-weight:750;
-  font-size:.87rem;border-bottom:1px solid var(--line);
+  font-size:.87rem;border-bottom:0;
 }
-.dropdown-menu a:last-child{
-  border-bottom:0;border-top:2px solid color-mix(in srgb,var(--copper) 55%,var(--line));
+.dropdown-menu a + a{
+  border-top:2px solid color-mix(in srgb,var(--copper) 55%,var(--line));
 }
 .dropdown-menu a:hover{text-decoration:none;background:var(--surface-2)}
 
