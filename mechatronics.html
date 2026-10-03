@@ -14,6 +14,44 @@
     })();
   </script>
   <link rel="stylesheet" href="assets/site-v4.css">
+  <style>
+    .presentation-wrap{padding:22px}
+    .presentation-embed{
+      width:100%;
+      aspect-ratio:1440/839;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:#111;
+      box-shadow:var(--shadow);
+    }
+    .presentation-embed iframe{
+      display:block;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+    .presentation-caption{
+      max-width:760px;
+      margin:12px auto 0;
+      color:var(--muted);
+      text-align:center;
+      font-size:.88rem;
+    }
+    .presentation-actions{
+      display:flex;
+      justify-content:center;
+      margin-top:14px;
+    }
+    .mechatronics-intro{
+      margin:0 0 18px;
+      color:var(--muted);
+      text-align:center;
+    }
+    @media (max-width:500px){
+      .presentation-wrap{padding:14px}
+    }
+  </style>
 </head>
 <body data-page="projects">
 
@@ -54,21 +92,34 @@
     <h2>Mechatronics I &amp; II</h2>
     <p>MEGR 2173 / 2174 · MEGR 3173 / 3174</p>
   </div>
-  <div class="card-body">
-    <p class="lead">Coursework spanning electrical circuits, sensors, instrumentation, embedded control, LabVIEW, data acquisition, signal conditioning, calibration, and dynamic mechanical testing.</p>
 
-    <div class="selector-grid">
-      <article class="selector-card">
-        <div class="course-number">MEGR 2173 / 2174</div>
-        <h3>Mechatronics I</h3>
-        <p>DC and AC circuits, laboratory instruments, sensors, signal conditioning, Arduino, and electromechanical systems.</p>
-      </article>
+  <div class="presentation-wrap">
+    <p class="mechatronics-intro">
+      Combined Mechatronics I &amp; II project work, including embedded control, sensors, instrumentation, data acquisition, and electromechanical systems.
+    </p>
 
-      <article class="selector-card">
-        <div class="course-number">MEGR 3173 / 3174</div>
-        <h3>Mechatronics II</h3>
-        <p>Instrumentation, strain measurement, LabVIEW/DAQ, vibrating-beam analysis, accelerometers, calibration, and experimental dynamics.</p>
-      </article>
+    <div class="presentation-embed">
+      <iframe
+        src="https://docs.google.com/presentation/d/e/2PACX-1vSbR7hQb1247C3_G-6-Yvo5gvQcxxCSDsEkfsbKi5kTvyVL-YvpaiMz_BJrRggG54QrrJENg64ZwRm4/pubembed?start=false&amp;loop=true&amp;delayms=3000"
+        title="Mechatronics I and II project presentation"
+        loading="lazy"
+        allowfullscreen
+        mozallowfullscreen
+        webkitallowfullscreen>
+      </iframe>
+    </div>
+
+    <p class="presentation-caption">
+      Interactive Mechatronics project presentation. Use the controls in the embedded viewer to navigate the slides or enter full-screen mode.
+    </p>
+
+    <div class="presentation-actions">
+      <a class="btn btn-secondary"
+         href="https://docs.google.com/presentation/d/e/2PACX-1vSbR7hQb1247C3_G-6-Yvo5gvQcxxCSDsEkfsbKi5kTvyVL-YvpaiMz_BJrRggG54QrrJENg64ZwRm4/pubembed?start=false&amp;loop=true&amp;delayms=3000"
+         target="_blank"
+         rel="noopener">
+        Open Presentation ↗
+      </a>
     </div>
   </div>
 </section>
