@@ -14,6 +14,20 @@
     })();
   </script>
   <link rel="stylesheet" href="assets/site-v4.css">
+  <style>
+    .junior-tabs{
+      display:flex;flex-wrap:wrap;gap:8px;padding:18px 22px 0;
+    }
+    .junior-tab{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:42px;padding:9px 14px;border:1px solid var(--line);
+      border-radius:999px;background:var(--surface-3);color:var(--text);
+      font-weight:800;font-size:.86rem;
+    }
+    .junior-tab:hover{text-decoration:none;background:var(--surface-2)}
+    .junior-tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
+    html[data-theme="dark"] .junior-tab.active{color:#101722}
+  </style>
 </head>
 <body data-page="projects">
 
@@ -55,10 +69,21 @@
     <h2>Junior Design</h2>
     <p>MEGR 3156 · Design Project Lab II</p>
   </div>
-  <div class="blank-state">
-    <div class="mark">JD</div>
-    <h2>Junior Design portfolio</h2>
-    <p>This section is ready for Junior Design project documentation, presentations, CAD, analysis, testing, and final results.</p>
+
+  <div class="junior-tabs" aria-label="Junior Design sections">
+    <a class="junior-tab active" href="junior-design.html">Junior Design Overview</a>
+    <a class="junior-tab" href="junior-design-cdr.html">Conceptual Design Review</a>
+  </div>
+
+  <div class="card-body">
+    <div class="selector-grid">
+      <article class="selector-card">
+        <div class="course-number">CDR</div>
+        <h3>Conceptual Design Review</h3>
+        <p>Concept development, engineering analysis, subsystem design, actuator sizing, and team integration for the multi-axis robotic sorting system.</p>
+        <a class="btn btn-primary" href="junior-design-cdr.html">Open Conceptual Design Review →</a>
+      </article>
+    </div>
   </div>
 </section>
 
