@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Zechariah Diegelman's individual Conceptual Design Review work for MEGR 3156 Junior Design at UNC Charlotte.">
+  <title>My CDR Work | Zechariah Diegelman</title>
+  <script>
+    (function(){
+      const saved=localStorage.getItem('zac-portfolio-theme');
+      const theme=(saved==='light'||saved==='dark')?saved:
+        (window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+      document.documentElement.setAttribute('data-theme',theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/site-v4.css">
+  <style>
+    .junior-tabs{
+      display:flex;flex-wrap:wrap;gap:8px;padding:18px 22px 0;
+    }
+    .junior-tab{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:42px;padding:9px 14px;border:1px solid var(--line);
+      border-radius:999px;background:var(--surface-3);color:var(--text);
+      font-weight:800;font-size:.86rem;
+    }
+    .junior-tab:hover{text-decoration:none;background:var(--surface-2)}
+    .junior-tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
+    html[data-theme="dark"] .junior-tab.active{color:#101722}
+
+    .cdr-wrap{padding:22px}
+    .cdr-contribution{
+      margin-bottom:20px;padding:18px 20px;
+      border:1px solid var(--line);
+      border-left:4px solid var(--copper);
+      border-radius:0 10px 10px 0;
+      background:var(--surface-3);
+    }
+    .cdr-contribution h3{margin:0 0 8px;color:var(--text)}
+    .cdr-contribution p{margin:0;color:var(--muted)}
+    .cdr-contribution strong{color:var(--text)}
+    .presentation-embed{
+      width:100%;aspect-ratio:1440/839;overflow:hidden;
+      border:1px solid var(--line);border-radius:10px;
+      background:#111;box-shadow:var(--shadow);
+    }
+    .presentation-embed iframe{
+      display:block;width:100%;height:100%;border:0;
+    }
+    .presentation-caption{
+      max-width:760px;margin:12px auto 0;color:var(--muted);
+      text-align:center;font-size:.88rem;
+    }
+    .presentation-actions{
+      display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px;
+    }
+    @media (max-width:500px){
+      .cdr-wrap{padding:14px}
+      .junior-tabs{padding:14px 14px 0}
+    }
+  </style>
+</head>
+<body data-page="projects">
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="identity">
+      <h1>Zechariah Diegelman</h1>
+      <p>Mechanical Engineering Senior · Expected December 2027</p>
+      <span class="school">University of North Carolina at Charlotte</span>
+    </div>
+
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">☾ Dark</button>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="nav-item" data-nav="about" href="index.html">About Me</a>
+      <div class="dropdown">
+        <button class="nav-button" data-nav="projects" type="button" aria-haspopup="true" aria-expanded="false">
+          Projects <span class="chev">▼</span>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a href="projects.html">Projects Overview</a>
+          <a href="junior-design.html">Junior Design</a>
+          <a href="sophomore-design.html">Sophomore Design</a>
+          <a href="freshman-design.html">Freshman Design</a>
+          <a href="mechatronics.html">Mechatronics I &amp; II</a>
+          <a href="additive-manufacturing.html">Additive Manufacturing</a>
+        </div>
+      </div>
+      <a class="nav-item" data-nav="resume" href="resume.html">Resume</a>
+      <a class="nav-item" data-nav="contact" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="card narrow">
+  <div class="card-head">
+    <h2>Junior Design</h2>
+    <p>MEGR 3156 · Design Project Lab II</p>
+  </div>
+
+  <div class="junior-tabs" aria-label="Junior Design sections">
+    <a class="junior-tab" href="junior-design.html">Junior Design Overview</a>
+    <a class="junior-tab active" href="junior-design-my-cdr.html">My CDR Work</a>
+    <a class="junior-tab" href="junior-design-cdr.html">Conceptual Design Review</a>
+  </div>
+
+  <div class="cdr-wrap">
+    <div class="cdr-contribution">
+      <h3>My CDR Contribution</h3>
+      <p>
+        This presentation isolates the work I personally completed for the Conceptual Design Review so that visitors can evaluate my engineering contribution without searching through the full team deck. I was responsible for the <strong>entire RA3 elbow subsystem</strong>, including concept development, geometry and interface definition, free-body and structural analysis, actuator sizing, load and torque calculations, bending stress and deflection checks, inertia, safety factor, torque margin, CAD development, and design documentation. I also assisted with <strong>inverse-kinematics and target-position calculations, subsystem integration and interface coordination, manufacturing and assembly considerations, and team technical documentation</strong>.
+      </p>
+    </div>
+
+    <div class="presentation-embed">
+      <iframe
+        src="https://studentuncc-my.sharepoint.com/personal/zdiegelm_charlotte_edu/_layouts/15/Doc.aspx?sourcedoc=%7Bead82de6-80bb-4017-a320-a99161f3966f%7D&amp;action=embedview&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=1"
+        title="Zechariah Diegelman's Conceptual Design Review work"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <p class="presentation-caption">
+      Focused presentation of my individual engineering work and slides from the Conceptual Design Review.
+    </p>
+
+    <div class="presentation-actions">
+      <a class="btn btn-secondary"
+         href="https://studentuncc-my.sharepoint.com/personal/zdiegelm_charlotte_edu/_layouts/15/Doc.aspx?sourcedoc=%7Bead82de6-80bb-4017-a320-a99161f3966f%7D&amp;action=embedview&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=1"
+         target="_blank"
+         rel="noopener">
+        Open My CDR Presentation ↗
+      </a>
+      <a class="btn btn-secondary" href="junior-design-cdr.html">View Full Team CDR →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <strong>Zechariah Diegelman</strong>
+  <div class="footer-links">
+    <a href="index.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="coursework.html">Course Archive</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.linkedin.com/in/zechariahdiegelman" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+  <div>Mechanical engineering student portfolio · Not an official UNC Charlotte website · © <span id="year"></span></div>
+</footer>
+<script src="assets/site-v4.js"></script>
+
+</body>
+</html>
