@@ -1,0 +1,105 @@
+name: Replace Resume PDF
+
+on:
+  push:
+    paths:
+      - '.github/workflows/replace-resume.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  replace-resume:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Rebuild exact uploaded resume PDF
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib
+          import re
+
+          path = Path('assets/downloads/zechariah-diegelman-resume.pdf')
+          data = path.read_bytes()
+
+          old_sha = 'a34f27d46a962add85b96142754157aa9179899b4c906fd9fddeb2f2082796aa'
+          target_sha = '95bb6f6f4918cf70a12be012e0d4737e8cd437db20930262b02453c59f889f1e'
+
+          current_sha = hashlib.sha256(data).hexdigest()
+          if current_sha == target_sha:
+              print('Resume already matches uploaded file exactly.')
+              raise SystemExit(0)
+          if current_sha != old_sha:
+              raise RuntimeError(f'Unexpected starting resume SHA-256: {current_sha}')
+
+          old_title = b'(MSI Solutions Resume.docx)'
+          new_title = b'(Zechariah Diegelman Resume.docx)'
+          if data.count(old_title) != 1:
+              raise RuntimeError('Expected PDF title metadata was not found exactly once.')
+
+          data = data.replace(old_title, new_title, 1)
+
+          xref_pos = data.rfind(b'\nxref\n') + 1
+          if xref_pos <= 0:
+              raise RuntimeError('PDF xref table was not found.')
+
+          object_offsets = {
+              int(match.group(1)): match.start()
+              for match in re.finditer(rb'(?m)^(\d+) 0 obj\r?\n', data[:xref_pos])
+          }
+
+          prefix = data[:xref_pos]
+          rest = data[xref_pos:]
+          header = re.match(rb'xref\r?\n0 (\d+)\r?\n', rest)
+          if not header:
+              raise RuntimeError('Unexpected PDF xref layout.')
+
+          count = int(header.group(1))
+          pos = header.end()
+          entries = []
+          for objnum in range(count):
+              end = rest.find(b'\n', pos) + 1
+              if end <= 0:
+                  raise RuntimeError('Malformed PDF xref entry.')
+              line = rest[pos:end]
+              if objnum == 0:
+                  entries.append(line)
+              else:
+                  offset = object_offsets.get(objnum)
+                  if offset is None:
+                      raise RuntimeError(f'Missing object offset for object {objnum}.')
+                  entries.append(f'{offset:010d}'.encode() + line[10:])
+              pos = end
+
+          data = prefix + header.group(0) + b''.join(entries) + rest[pos:]
+
+          startxref_matches = list(re.finditer(rb'startxref\r?\n(\d+)\r?\n%%EOF', data))
+          if not startxref_matches:
+              raise RuntimeError('PDF startxref marker was not found.')
+          marker = startxref_matches[-1]
+          data = data[:marker.start(1)] + str(xref_pos).encode() + data[marker.end(1):]
+
+          rebuilt_sha = hashlib.sha256(data).hexdigest()
+          if rebuilt_sha != target_sha:
+              raise RuntimeError(f'Rebuilt PDF SHA-256 mismatch: {rebuilt_sha}')
+
+          path.write_bytes(data)
+          print(f'Resume replaced and verified: {rebuilt_sha}')
+
+      - name: Commit exact resume file
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/downloads/zechariah-diegelman-resume.pdf
+          if git diff --cached --quiet; then
+            echo "No resume change needed."
+            exit 0
+          fi
+          git commit -m "Replace resume with latest uploaded version"
+          git push
