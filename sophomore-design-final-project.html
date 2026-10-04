@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Zechariah Diegelman's sophomore design final project at UNC Charlotte.">
+  <title>Sophomore Design Final Project | Zechariah Diegelman</title>
+  <script>
+    (function(){
+      const saved=localStorage.getItem('zac-portfolio-theme');
+      const theme=(saved==='light'||saved==='dark')?saved:
+        (window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+      document.documentElement.setAttribute('data-theme',theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/site-v4.css">
+  <style>
+    .final-project-wrap{display:grid;gap:22px;padding:22px}
+    .final-project-section{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface-3)}
+    .final-project-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 18px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+    .final-project-head h3{margin:0}
+    .final-project-head p{margin:3px 0 0;color:var(--muted);font-size:.86rem}
+    .final-project-frame{display:block;width:100%;height:860px;border:0;background:#fff}
+    html[data-theme="dark"] .final-project-frame{background:#101722}
+    @media (max-width:760px){
+      .final-project-wrap{padding:14px}
+      .final-project-frame{height:720px}
+    }
+  </style>
+</head>
+<body data-page="projects">
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="identity">
+      <h1>Zechariah Diegelman</h1>
+      <p>Mechanical Engineering Senior · Expected December 2027</p>
+      <span class="school">University of North Carolina at Charlotte</span>
+    </div>
+
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">☾ Dark</button>
+
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="nav-item" data-nav="about" href="index.html">About Me</a>
+      <div class="dropdown">
+        <button class="nav-button" data-nav="projects" type="button" aria-haspopup="true" aria-expanded="false">
+          Projects <span class="chev">▼</span>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a href="projects.html">Projects Overview</a>
+          <a href="junior-design.html">Junior Design</a>
+          <a href="sophomore-design.html">Sophomore Design</a>
+          <a href="freshman-design.html">Freshman Design</a>
+          <a href="mechatronics.html">Mechatronics I &amp; II</a>
+          <a href="additive-manufacturing.html">Additive Manufacturing</a>
+        </div>
+      </div>
+      <a class="nav-item" data-nav="resume" href="resume.html">Resume</a>
+      <a class="nav-item" data-nav="contact" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="card narrow">
+  <div class="card-head">
+    <h2>Sophomore Design Final Project</h2>
+    <p>MEGR 2156 · Final project development</p>
+  </div>
+
+  <div class="final-project-wrap">
+    <section class="final-project-section">
+      <div class="final-project-head">
+        <div>
+          <div class="course-number">PART 1</div>
+          <h3>Define the Problem and Rough Prototype</h3>
+          <p>Initial problem definition, concept development, and rough prototype.</p>
+        </div>
+        <a class="btn btn-secondary" href="archive-viewer.html?src=coursework%2Fmegr-2156-l3d%2Fassignments_project-part-1-define-the-problem-and-rough-prototype.html&amp;title=FP1%3A%20Define%20the%20Problem%20and%20Rough%20Prototype" target="_blank" rel="noopener">Open Part 1 ↗</a>
+      </div>
+      <iframe class="final-project-frame" src="coursework/megr-2156-l3d/assignments_project-part-1-define-the-problem-and-rough-prototype.html" title="Sophomore Design Final Project Part 1" loading="lazy"></iframe>
+    </section>
+
+    <section class="final-project-section">
+      <div class="final-project-head">
+        <div>
+          <div class="course-number">PART 2</div>
+          <h3>Enhance the Prototype</h3>
+          <p>Refinement of the initial prototype with design improvements and final development.</p>
+        </div>
+        <a class="btn btn-secondary" href="archive-viewer.html?src=coursework%2Fmegr-2156-l3d%2Fassignments_project-part-2-enhance-the-prototype.html&amp;title=FP2%3A%20Final%20Project%20%E2%80%94%20Enhance%20the%20Prototype" target="_blank" rel="noopener">Open Part 2 ↗</a>
+      </div>
+      <iframe class="final-project-frame" src="coursework/megr-2156-l3d/assignments_project-part-2-enhance-the-prototype.html" title="Sophomore Design Final Project Part 2" loading="lazy"></iframe>
+    </section>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <strong>Zechariah Diegelman</strong>
+  <div class="footer-links">
+    <a href="index.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="coursework.html">Course Archive</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://www.linkedin.com/in/zechariahdiegelman" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+  <div>Mechanical engineering student portfolio · Not an official UNC Charlotte website · © <span id="year"></span></div>
+</footer>
+<script src="assets/site-v4.js"></script>
+
+</body>
+</html>
