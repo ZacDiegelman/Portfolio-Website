@@ -17,8 +17,14 @@
   <style>
     .favorites-grid{display:grid;gap:16px}
     .favorite-card{position:relative}
-    .favorite-card h3{font-size:1.12rem}
-    .favorite-card .favorite-meta{color:var(--copper);font-weight:850;font-size:.82rem;letter-spacing:.03em;text-transform:uppercase;margin-bottom:6px}
+    .favorite-card .favorite-meta{color:var(--copper);font-weight:850;font-size:.82rem;letter-spacing:.03em;text-transform:uppercase;margin-bottom:8px}
+    .favorite-title-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:10px}
+    .favorite-title-row h3{font-size:1.12rem;margin:0}
+    .favorite-title-row .btn{flex:0 0 auto;min-height:38px;padding:7px 12px;font-size:.82rem}
+    .favorite-card p{margin:0;color:var(--muted)}
+    @media (max-width:700px){
+      .favorite-title-row{align-items:flex-start;flex-direction:column;gap:9px}
+    }
   </style>
 </head>
 <body data-page="projects">
@@ -65,23 +71,29 @@
     <div class="favorites-grid">
       <article class="selector-card favorite-card">
         <div class="favorite-meta">MEGR 2156 · Lab 7</div>
-        <h3>Linkage Mechanism</h3>
+        <div class="favorite-title-row">
+          <h3>Linkage Mechanism</h3>
+          <a class="btn btn-primary" href="archive-viewer.html?src=coursework%2Fmegr-2156-l3d%2Fassignments_lab-number-7-linkage-mechanism.html&amp;title=L7%3A%20Linkage%20%2F%20Mechanism">View Linkage Mechanism →</a>
+        </div>
         <p>Designed, printed, assembled, and tested a working linkage mechanism, including iterative fit changes, supporting hardware, and functional verification.</p>
-        <a class="btn btn-primary" href="archive-viewer.html?src=coursework%2Fmegr-2156-l3d%2Fassignments_lab-number-7-linkage-mechanism.html&amp;title=L7%3A%20Linkage%20%2F%20Mechanism">View Linkage Mechanism →</a>
       </article>
 
       <article class="selector-card favorite-card">
         <div class="favorite-meta">MEGR 2156 · Lab 10</div>
-        <h3>Snap Fit Design for SLA Printing</h3>
+        <div class="favorite-title-row">
+          <h3>Snap Fit Design for SLA Printing</h3>
+          <a class="btn btn-primary" href="archive-viewer.html?src=coursework%2Fmegr-2156-l3d%2Fassignments_lab-number-10-snap-fit-design-for-sla-printing-form-4.html&amp;title=L10%3A%20Snap%20Fit%20Design%20for%20SLA%20Printing%20%E2%80%94%20Form%204">View Snap Fit Project →</a>
+        </div>
         <p>Designed and evaluated snap-fit geometry for Form 4 SLA printing, with CAD development, printed-part testing, and design refinement.</p>
-        <a class="btn btn-primary" href="archive-viewer.html?src=coursework%2Fmegr-2156-l3d%2Fassignments_lab-number-10-snap-fit-design-for-sla-printing-form-4.html&amp;title=L10%3A%20Snap%20Fit%20Design%20for%20SLA%20Printing%20%E2%80%94%20Form%204">View Snap Fit Project →</a>
       </article>
 
       <article class="selector-card favorite-card">
         <div class="favorite-meta">MEGR 2156 · Final Project</div>
-        <h3>Sophomore Design Final Project</h3>
+        <div class="favorite-title-row">
+          <h3>Sophomore Design Final Project</h3>
+          <a class="btn btn-primary" href="sophomore-design-final-project.html">View Final Project →</a>
+        </div>
         <p>Final design project shown as one project, containing both Part 1 — Define the Problem and Rough Prototype — and Part 2 — Enhance the Prototype.</p>
-        <a class="btn btn-primary" href="sophomore-design-final-project.html">View Final Project →</a>
       </article>
     </div>
   </div>
